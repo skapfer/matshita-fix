@@ -7,7 +7,7 @@ For no good reason, Matshita drives sometimes are unable to read
 absolutely fine DVDs.  You can fix this by upgrading their
 firmware; you can find suitable images online.
 
-I couldn't fix a flasher that works without Windows or MacOS.
+I couldn't find a flasher that works without Windows or MacOS.
 So I fiddled a little bit.  Very little of this is actually my
 own work:
 
@@ -36,7 +36,8 @@ for any damage done.
 
 TODO
 
-port this to plscsi upstream
+port this to plscsi upstream and replace the struct sp
+hack
 
 firmware dumper
 
