@@ -1,0 +1,45 @@
+simple_flash: fix your Matshita DVD reader, under Linux
+
+
+BACKGROUND
+
+For no good reason, Matshita drives sometimes are unable to read
+absolutely fine DVDs.  You can fix this by upgrading their
+firmware; you can find suitable images online.
+
+I couldn't fix a flasher that works without Windows or MacOS.
+So I fiddled a little bit.  Very little of this is actually my
+own work:
+
+* lscsi.c is part of the plscsi toolkit, by Pat LaVarre
+(http://home.comcast.net/~plavarre/plscsi/)
+
+* simple_flash.c, xscsi.h -- from the MacOS flasher by 'ben11'
+
+Minimal tweaking to get it to compile and link by me,
+simple_flash.x* are static binaries.
+
+
+INVOCATION
+
+Invoke like this:
+
+./simple_flash.x64 /dev/sg1 UJXXXX_VERSION.dat
+
+Where sg1 is the SCSI generic device for your DVD reader,
+and the *dat a suitable firmware file.
+
+Have fun, and don't fry your drive.  I hope you know
+what you're doing, and I cannot accept responsibility
+for any damage done.
+
+
+TODO
+
+port this to plscsi upstream
+
+firmware dumper
+
+add a proper build system to build on Windows and MacOS
+
+
